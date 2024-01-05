@@ -49,7 +49,7 @@ function signUp() {
             //         location.href(base + 'index.html')
             //     }
             // }
-            window.location.href = 'index.html'
+            window.location.href = '../index.html'
             clearInfoSign()
             exist.classList.add('d-none')
         }
@@ -68,7 +68,7 @@ function login() {
             if (isEmailAndPassExist(em,pas)) {
                 document.querySelector('#text').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success.<span>'
                 clearInfoLogin()
-                window.location.href='home.html'
+                window.location.href='../home.html'
                 // if (base == '/') {
                 //     location.href('https://' + location.hostname + 'home.html')
 
