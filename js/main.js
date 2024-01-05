@@ -67,14 +67,7 @@ function login() {
             if (isEmailAndPassExist(em,pas)) {
                 document.querySelector('#text').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success.<span>'
                 clearInfoLogin()
-                if (base == '/') {
-                    location.replace('https://' + location.hostname + '/home.html')
-
-                } else {
-                    location.replace(base + '/home.html')
-                }
-
-                
+                location.href='../home.html'
                 localStorage.setItem('loginName', regList[isEmailAndPassExist(em,pas)-1].name)
             } else {
                 document.querySelector('#message').innerHTML = '<span class="text-danger m-3 fs-4">Incorrect Email Or Password...</span>'
