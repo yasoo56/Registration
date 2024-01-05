@@ -44,9 +44,9 @@ function signUp() {
             document.querySelector('#warring').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success...</span>'
             for (let i = 0; i < regList.length; i++) {
                 if (base == '/') {
-                    location.replace('https://' + location.hostname + 'index.html')
+                    location.href('https://' + location.hostname + 'index.html')
                 } else {
-                    location.replace(base + 'index.html')
+                    location.href(base + 'index.html')
                 }
             }
             clearInfoSign()
@@ -69,10 +69,10 @@ function login() {
                 clearInfoLogin()
                 // location.href='../home.html'
                 if (base == '/') {
-                    location.replace('https://' + location.hostname + 'home.html')
+                    location.href('https://' + location.hostname + 'home.html')
 
                 } else {
-                    location.replace(base + 'home.html')
+                    location.href(base + 'home.html')
                 }
 
                 
