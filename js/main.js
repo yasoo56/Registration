@@ -44,9 +44,9 @@ function signUp() {
             document.querySelector('#warring').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success...</span>'
             for (let i = 0; i < regList.length; i++) {
                 if (base == '/') {
-                    location.replace('https://' + location.hostname + '/index.html')
+                    location.replace('https://' + location.hostname + 'index.html')
                 } else {
-                    location.replace(base + '/index.html')
+                    location.replace(base + 'index.html')
                 }
             }
             clearInfoSign()
@@ -67,7 +67,15 @@ function login() {
             if (isEmailAndPassExist(em,pas)) {
                 document.querySelector('#text').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success.<span>'
                 clearInfoLogin()
-                location.href='../home.html'
+                // location.href='../home.html'
+                if (base == '/') {
+                    location.replace('https://' + location.hostname + 'home.html')
+
+                } else {
+                    location.replace(base + 'home.html')
+                }
+
+                
                 localStorage.setItem('loginName', regList[isEmailAndPassExist(em,pas)-1].name)
             } else {
                 document.querySelector('#message').innerHTML = '<span class="text-danger m-3 fs-4">Incorrect Email Or Password...</span>'
