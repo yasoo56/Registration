@@ -10,11 +10,11 @@ let exist = document.querySelector('#Exsist')
 
 
 let regList = []
-let path = location.pathname.split('/')
-let base = ''
-for (let i = 0; i < path.length - 1; i++) {
-    base += '/' + path[i]
-}
+// let path = location.pathname.split('/')
+// let base = ''
+// for (let i = 0; i < path.length - 1; i++) {
+//     base += '/' + path[i]
+// }
 if (localStorage.getItem('data') != null) {
     regList = JSON.parse(localStorage.getItem('data'))
 }
@@ -42,13 +42,14 @@ function signUp() {
             regList.push(reg)
             localStorage.setItem('data', JSON.stringify(regList))
             document.querySelector('#warring').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success...</span>'
-            for (let i = 0; i < regList.length; i++) {
-                if (base == '/') {
-                    location.href('https://' + location.hostname + 'index.html')
-                } else {
-                    location.href(base + 'index.html')
-                }
-            }
+            // for (let i = 0; i < regList.length; i++) {
+            //     if (base == '/') {
+            //         location.href('https://' + location.hostname + 'index.html')
+            //     } else {
+            //         location.href(base + 'index.html')
+            //     }
+            // }
+            window.location.href = 'index.html'
             clearInfoSign()
             exist.classList.add('d-none')
         }
@@ -67,13 +68,13 @@ function login() {
             if (isEmailAndPassExist(em,pas)) {
                 document.querySelector('#text').innerHTML = '<span class="text-success m-3 fw-bold fs-3">Success.<span>'
                 clearInfoLogin()
-                // location.href='../home.html'
-                if (base == '/') {
-                    location.href('https://' + location.hostname + 'home.html')
+                window.location.href='home.html'
+                // if (base == '/') {
+                //     location.href('https://' + location.hostname + 'home.html')
 
-                } else {
-                    location.href(base + 'home.html')
-                }
+                // } else {
+                //     location.href(base + 'home.html')
+                // }
 
                 
                 localStorage.setItem('loginName', regList[isEmailAndPassExist(em,pas)-1].name)
